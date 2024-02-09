@@ -16,6 +16,8 @@ import javax.persistence.Table;
 public class Car {
 	@Id
     @GeneratedValue
+    @Column(name = "ID")
+    private int id;
     @Column(name = "MAKE")
     private String make;
 
@@ -43,6 +45,15 @@ public class Car {
     }
 
     // Getter and setter methods
+    
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getMake() {
 		return make;
 	}

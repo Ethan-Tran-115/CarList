@@ -90,7 +90,16 @@ public class CarHelper {
         em.close();
         return foundCars;
     }
-
+    
+    
+    public	Car searchForCarById(int idToEdit)	{
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		Car found = em.find(Car.class, idToEdit);
+		em.close();
+		return found;
+		}
+    
     public void cleanUp() {
         emfactory.close();
     }
